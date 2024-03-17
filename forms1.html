@@ -1,0 +1,83 @@
+<html>
+<head>
+<title> Regestration form </title> 
+<script>
+function validate()
+{
+  var n = document.getElementById("fname");
+  var patt_name = /^[A-Z a-z]+$/ ;
+  var email = document.getElementById("fmail");
+  var patt_mail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/ ;
+  
+  
+   
+    if(n.value.trim() ==""||email.value.trim()=="")
+      {
+       alert("please enter your data ");
+	   n.style.border="4px solid red";
+	   document.getElementById("lable").style.visibility="visible";
+
+	
+	   return false;
+	   }
+	else
+	    {
+	     if (patt_name.test(n.value)&&patt_mail.test(email.value))
+	        {
+	          alert("your data is submited");
+	          return true;
+	        }
+	     else
+		    {
+	          alert("please enter the correct value");
+	          return false;
+	        }
+	   }
+	}
+	
+	
+	
+</script>
+</head>
+<body bgcolor=#deffd9>
+<br>
+<h2 align=center style="color:black" ;><b><i> New Regestration</i></b></h2>
+<form onsubmit="return validate()">
+<fieldset style="background-color:#b9edc4" > 
+<legend style="color:black"> FORM 1 </legend> 
+
+<h3>&nbsp;&nbsp; Name : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" maxlength="15" id="fname"> <span id="message"> </span> <br> <br>
+&nbsp;&nbsp; Email ID : &nbsp;&nbsp; <input type="text" maxlength="15" placeholder="eg: xyz@gmail.com" id="fmail"> <br> <br>
+&nbsp;&nbsp; Phone No : +91&nbsp; <input type="text" maxlength="10" placeholder="eg: 8887878787" pattern="^[7-9][0-9]{9}$" required> &nbsp;&nbsp;<button> send OTP </button> &nbsp;<BUTTON> Resend </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OTP <input type="text" maxlength="5" SIZE="10"> &nbsp; <button> Confirm </button>  <br> <br>
+&nbsp;&nbsp; Gender : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type=radio name=one> Male <input type="radio" name=one> Female <br> <br>
+&nbsp;&nbsp; D.O.B : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type=date> <br> <br>
+&nbsp;&nbsp; Country :&nbsp;&nbsp; &nbsp;&nbsp;<input type="text"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; City / village : &nbsp;&nbsp;<input type="text"><br> <br>
+&nbsp;&nbsp; Pincode : &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" maxlength="7"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Address : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" > <br> <br>
+&nbsp;&nbsp; Password :&nbsp;&nbsp; <input type="password" maxlength"8"><br> <br>
+<h3 align=center> <input type="submit" value="submit"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button> RESET </button>
+</h3>
+</h3>
+</legend>
+
+
+</fieldset>
+<br> <br> 
+<h2 align=center style="color:black" ;><i><b> Login </b></i></h2>
+<fieldset style= "background-color:#b9edc4" > 
+<legend> Form 2 </legend>
+<h3>
+&nbsp;&nbsp; User Name : <input type="text" > <br> <br> 
+&nbsp;&nbsp; Password : <input type= "password" > <br> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<button> ENTER </button> <br> <br> 
+</h3>
+
+
+
+</fieldset>
+</form>
+
+
+
+
+</body>
+</html>
